@@ -53,7 +53,30 @@ function draw() {
         let color = hand.handedness == "Left" ? [255, 0, 255] : [255, 255, 0];
         stroke(...color);
         strokeWeight(2);
-        for (let i = 0; i < 4; i++) {
+
+        // Connect keypoints 5-8
+        for (let i = 5; i < 8; i++) {
+          let start = hand.keypoints[i];
+          let end = hand.keypoints[i + 1];
+          line(start.x, start.y, end.x, end.y);
+        }
+
+        // Connect keypoints 9-12
+        for (let i = 9; i < 12; i++) {
+          let start = hand.keypoints[i];
+          let end = hand.keypoints[i + 1];
+          line(start.x, start.y, end.x, end.y);
+        }
+
+        // Connect keypoints 13-16
+        for (let i = 13; i < 16; i++) {
+          let start = hand.keypoints[i];
+          let end = hand.keypoints[i + 1];
+          line(start.x, start.y, end.x, end.y);
+        }
+
+        // Connect keypoints 17-20
+        for (let i = 17; i < 20; i++) {
           let start = hand.keypoints[i];
           let end = hand.keypoints[i + 1];
           line(start.x, start.y, end.x, end.y);
