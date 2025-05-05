@@ -48,6 +48,16 @@ function draw() {
           noStroke();
           circle(keypoint.x, keypoint.y, 16);
         }
+
+        // Draw lines connecting keypoints 0 to 4
+        let color = hand.handedness == "Left" ? [255, 0, 255] : [255, 255, 0];
+        stroke(...color);
+        strokeWeight(2);
+        for (let i = 0; i < 4; i++) {
+          let start = hand.keypoints[i];
+          let end = hand.keypoints[i + 1];
+          line(start.x, start.y, end.x, end.y);
+        }
       }
     }
   }
